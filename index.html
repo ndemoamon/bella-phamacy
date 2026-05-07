@@ -3,89 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bella Pharmacy | Professional Care & Trusted Advice</title>
+  <title>Bella Pharmacy | Quality Healthcare in Nairobi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-teal: #008080;
-      --soft-white: #f4f7f6;
-      --text-dark: #2c3e50;
-      --whatsapp-green: #25D366;
+      --deep-teal: #005a5a;
+      --accent-green: #2ecc71;
+      --light-bg: #f8fafc;
+      --text-main: #1e293b;
     }
+
     body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: var(--soft-white);
-      color: var(--text-dark);
-      line-height: 1.6;
+      background-color: var(--light-bg);
+      color: var(--text-main);
     }
+
+    /* Top Branding Bar */
+    .top-bar {
+      background: var(--primary-teal);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
     header {
       background: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-teal);
+      letter-spacing: -1px;
+    }
+
+    /* Hero Section with high-end overlay */
     .hero {
-      background: linear-gradient(rgba(0,128,128,0.85), rgba(0,128,128,0.85)), 
-                  url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000');
+      background: linear-gradient(rgba(0, 90, 90, 0.7), rgba(0, 90, 90, 0.7)), 
+                  url('https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=1200');
       background-size: cover;
       background-position: center;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       color: white;
-      padding: 4rem 1rem;
+      padding: 0 20px;
+    }
+
+    .hero h1 { font-size: 42px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; max-width: 600px; margin-bottom: 30px; opacity: 0.9; }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.4); }
+
+    .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      border-bottom: 4px solid var(--primary-teal);
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover { transform: translateY(-10px); }
+
+    .feature-card h3 { color: var(--primary-teal); margin-top: 0; }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 50px 20px;
       text-align: center;
     }
-    .container { padding: 2rem; max-width: 900px; margin: auto; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .card { background: white; padding: 1.5rem; border-radius: 10px; border-top: 4px solid var(--primary-teal); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    .btn {
-      display: inline-block;
-      background-color: var(--whatsapp-green);
-      color: white;
-      padding: 12px 30px;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-      margin-top: 1rem;
-      transition: transform 0.2s;
-    }
-    .btn:hover { transform: scale(1.05); }
-    footer { background: #eee; text-align: center; padding: 2rem; margin-top: 3rem; font-size: 0.9rem; }
+
+    .footer-content strong { color: white; display: block; margin-bottom: 10px; font-size: 20px; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1 style="color: var(--primary-teal); margin: 0; letter-spacing: 1px;">BELLA PHARMACY</h1>
-</header>
+  <div class="top-bar">📍 Located in Nairobi West | Serving the Community Since 2015</div>
 
-<section class="hero">
-  <h1>Your Health, Our Priority</h1>
-  <p>Professional pharmaceutical services delivered with care.</p>
-  <a href="https://wa.me/2547XXXXXXXX" class="btn">Order via WhatsApp</a>
-</section>
+  <header>
+    <div class="logo">BELLA PHARMACY</div>
+  </header>
 
-<div class="container">
-  <h2 style="text-align: center; color: var(--primary-teal);">Our Services</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Prescription Filling</h3>
-      <p>Accurate and timely dispensing of your medications by qualified professionals.</p>
-    </div>
-    <div class="card">
-      <h3>Chronic Medication</h3>
-      <p>Easy refills and management for long-term health requirements.</p>
-    </div>
-    <div class="card">
-      <h3>Wellness Products</h3>
-      <p>A wide range of vitamins, supplements, and personal care items.</p>
+  <section class="hero">
+    <h1>Quality Healthcare Simplified.</h1>
+    <p>Professional pharmacy services, wellness consultations, and home delivery across Nairobi.</p>
+    <a href="https://wa.me/2547XXXXXXXX" class="btn-whatsapp">Send Prescription via WhatsApp</a>
+  </section>
+
+  <div class="container">
+    <div class="features">
+      <div class="feature-card">
+        <h3>Prescription Filling</h3>
+        <p>Upload your prescription via WhatsApp and have it ready for pickup or delivered to your door.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Health Consultations</h3>
+        <p>Speak with our licensed pharmacists for advice on OTC medications and general wellness.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Chronic Care</h3>
+        <p>Never run out of essential meds. We offer automated refill reminders and local delivery.</p>
+      </div>
     </div>
   </div>
-</div>
 
-<footer>
-  <p><strong>Bella Pharmacy — Nairobi</strong><br>
-  Open Daily: 8:00 AM - 8:00 PM<br>
-  Designed to keep our community healthy.</p>
-</footer>
+  <footer>
+    <div class="footer-content">
+      <strong>BELLA PHARMACY</strong>
+      <p>Nairobi, Kenya</p>
+      <p>Open Monday - Saturday: 8 AM to 9 PM</p>
+      <p style="font-size: 12px; margin-top: 30px;">© 2026 Bella Pharmacy. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
